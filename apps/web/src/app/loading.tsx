@@ -5,7 +5,7 @@ export default function RootLoading() {
     <LoadingState
       fullScreen
       title="Booting Astrolabe Decision Simulator"
-      description="Syncing symbolic signals, worldline state, and replay layers."
+      description="Syncing startup signals, simulation state, and replay layers."
     />
   );
 }

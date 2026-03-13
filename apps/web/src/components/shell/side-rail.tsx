@@ -23,7 +23,7 @@ export function SideRail() {
             </div>
             <div>
               <div className="text-sm font-medium text-white">Astrolabe Decision Simulator</div>
-              <div className="text-xs uppercase tracking-[0.26em] text-slate-500">Symbolic Console</div>
+              <div className="text-xs uppercase tracking-[0.26em] text-slate-500">Decision Console</div>
             </div>
           </div>
           <div className="mt-5 rounded-[20px] border border-white/10 bg-slate-950/60 p-4">
@@ -79,7 +79,7 @@ export function SideRail() {
               </div>
               <div className="flex items-center justify-between">
                 <span>Simulation mode</span>
-                <span className="text-cyan-100">symbolic</span>
+                <span className="text-cyan-100">constrained</span>
               </div>
               <div className="flex items-center justify-between">
                 <span>Audit log</span>

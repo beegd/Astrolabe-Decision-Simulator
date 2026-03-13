@@ -23,39 +23,39 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const capabilityCards = [
   {
     icon: BrainCircuit,
-    title: "Signal Mapping Layer",
+    title: "Decision Intelligence Layer",
     label: "Assess",
     description:
-      "Turn a question, chart notes, symbolic evidence, and constraints into a structured signal map the engine can reason about.",
+      "Turn founder input, evidence, and constraints into a structured scenario the engine can reason about.",
   },
   {
     icon: Radar,
-    title: "100 Astrolabe Worldlines",
+    title: "100 Company Worldlines",
     label: "Simulate",
     description:
-      "Run 100 symbolic branches of the same scenario with different archetype emphasis, timing bias, and interpretation drift.",
+      "Run 100 constrained branches of the same startup idea with different founder types, pricing paths, channels, and market noise.",
   },
   {
     icon: Compass,
-    title: "Replayable Guidance",
+    title: "Planner Output",
     label: "Act",
     description:
-      "Convert the strongest and weakest branches into next questions, timing windows, action paths, and stop-loss notes.",
+      "Convert the strongest and weakest branches into staged execution plans, next experiments, and stop-loss rules.",
   },
 ];
 
 const architectureBlocks = [
   {
-    title: "Symbolic Modeling",
-    body: "Structure the question first so the simulator can inspect signals instead of reacting to free-form prompts.",
+    title: "World Modeling",
+    body: "Structure the startup thesis first so the simulator can inspect evidence and constraints instead of reacting to vague prompts.",
   },
   {
-    title: "Worldline Engine",
-    body: "The same scenario branches into 100 constrained paths rather than collapsing into one definitive reading.",
+    title: "Constrained Simulation",
+    body: "The same startup idea branches into 100 constrained company paths rather than collapsing into one optimistic narrative.",
   },
   {
-    title: "Replay + Guidance",
-    body: "Every path is inspectable, replayable, and convertible into concrete next moves rather than abstract interpretation alone.",
+    title: "Replay + Action",
+    body: "Every path is inspectable, replayable, and convertible into concrete next moves instead of abstract advice alone.",
   },
 ];
 
@@ -63,35 +63,35 @@ const workflow = [
   {
     step: "01",
     title: "Assess",
-    body: "Map the symbolic inputs clearly before jumping to interpretation.",
+    body: "Score the idea, inspect evidence quality, and identify risks before making a high-cost move.",
   },
   {
     step: "02",
     title: "Simulate",
-    body: "Compare 100 possible paths instead of anchoring on a single reading too early.",
+    body: "Compare 100 constrained company paths instead of anchoring on a single founder intuition too early.",
   },
   {
     step: "03",
     title: "Act",
-    body: "Turn the strongest signal patterns into next steps, timing notes, and caution flags.",
+    body: "Turn the strongest paths into next experiments, execution plans, and stop-loss thresholds.",
   },
 ];
 
 const audiences = [
   {
     icon: Target,
-    title: "Astrologers",
-    body: "Use a structured replay layer when a client question has too many symbolic branches to trust one linear read.",
+    title: "AI Founders",
+    body: "Use the system when a startup idea needs stronger evidence before time, capital, and scope get committed.",
   },
   {
     icon: Binary,
-    title: "Symbolic Researchers",
-    body: "Inspect how timing, archetypes, and interpretation bias alter the shape of a possible path.",
+    title: "Solo Operators",
+    body: "Inspect how pricing, channel strategy, and execution style alter the shape of a possible company path.",
   },
   {
     icon: Users,
-    title: "Decision Makers",
-    body: "Compare scenario paths when a choice feels timing-sensitive, emotionally noisy, or symbolically complex.",
+    title: "Small Teams",
+    body: "Compare scenario paths when a product wedge feels promising but the economics and GTM path are still uncertain.",
   },
 ];
 
@@ -112,7 +112,7 @@ export default function HomePage() {
             <div>
               <div className="font-mono text-xs font-bold uppercase tracking-widest text-cyan-300 glow-text-sm">[ SYSTEM: ONLINE ] ASTROLABE DECISION SIMULATOR</div>
               <div className="text-mono text-[10px] uppercase tracking-[0.3em] text-cyan-500/70">
-                {"// SYMBOLIC WORLDLINE ENGINE v2.4"}
+                {"// STARTUP WORLDLINE ENGINE v2.4"}
               </div>
             </div>
           </div>
@@ -144,12 +144,12 @@ export default function HomePage() {
             </motion.div>
             <motion.div variants={fadeUp} className="space-y-6">
               <h1 className="glow-text max-w-4xl text-balance text-5xl font-semibold tracking-[-0.04em] text-white md:text-6xl xl:text-7xl">
-                <span className="text-cyan-400">&lt;</span> COMPARE SYMBOLIC PATHS BEFORE YOU COMMIT TO ONE INTERPRETATION <span className="text-cyan-400">/&gt;</span>
+                <span className="text-cyan-400">&lt;</span> ASSESS THE IDEA BEFORE YOU BURN TIME, CASH, AND SCOPE <span className="text-cyan-400">/&gt;</span>
               </h1>
               <p className="max-w-2xl text-lg leading-8 text-slate-300 md:text-xl">
-                Astrolabe Decision Simulator structures the question, simulates 100 worldlines, and
-                turns symbolic uncertainty into replayable action paths. It is built for moments when one
-                reading is not enough and the real task is comparing branches with discipline.
+                Astrolabe Decision Simulator structures the startup thesis, simulates 100 company
+                worldlines, and turns uncertainty into replayable action paths. It is built for moments
+                when founder instinct is not enough and the real task is comparing branches with discipline.
               </p>
             </motion.div>
             <motion.div variants={fadeUp} className="flex flex-col gap-4 sm:flex-row font-mono">
@@ -167,8 +167,8 @@ export default function HomePage() {
             </motion.div>
             <motion.div variants={fadeUp} className="grid gap-4 sm:grid-cols-3">
               {[
-                ["100", "symbolic worldlines"],
-                ["12", "replay phases"],
+                ["100", "company worldlines"],
+                ["12", "monthly heartbeats"],
                 ["Replay", "judgeable paths"],
               ].map(([value, label]) => (
                 <div
@@ -196,8 +196,8 @@ export default function HomePage() {
       <section className="mx-auto max-w-7xl px-6 py-20 md:px-8">
         <SectionHeading
           eyebrow="Architecture"
-          title="A symbolic simulator, not a one-shot horoscope interface."
-          description="The product thesis is simple: structure the signal field, branch the scenario into multiple worldlines, then convert the replay into a better next move."
+          title="A startup simulator, not a generic brainstorming interface."
+          description="The product thesis is simple: structure the idea, branch the scenario into multiple company worldlines, then convert the replay into a better next move."
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {architectureBlocks.map((item, index) => (
@@ -217,8 +217,8 @@ export default function HomePage() {
       <section id="capabilities" className="mx-auto max-w-7xl px-6 py-20 md:px-8">
         <SectionHeading
           eyebrow="Core Capabilities"
-          title="From signal mapping, to worldline simulation, to guidance."
-          description="These modules are not isolated pages. They are one continuous loop: assess the symbolic field, simulate the branches, then act with more clarity."
+          title="From assessment, to simulation, to action planning."
+          description="These modules are not isolated pages. They are one continuous loop: assess the idea, simulate the branches, then act with more clarity."
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {capabilityCards.map((item, index) => (
@@ -254,8 +254,8 @@ export default function HomePage() {
       <section id="dashboard-preview" className="mx-auto max-w-7xl px-6 py-20 md:px-8">
         <SectionHeading
           eyebrow="Dashboard Preview"
-          title="Read the symbolic field like a control plane, not a feed of disconnected interpretations."
-          description="The preview shows how the product combines signal confidence, path divergence, judge notes, and next guidance in one replayable interface."
+          title="Read the company field like a control plane, not a feed of disconnected opinions."
+          description="The preview shows how the product combines viability, survival curves, judge notes, and next guidance in one replayable interface."
         />
         <div className="mt-10">
           <DashboardPreview />
@@ -266,7 +266,7 @@ export default function HomePage() {
         <SectionHeading
           eyebrow="Workflow"
           title="Assess -&gt; Simulate -&gt; Act"
-          description="Do not jump from raw symbolism to conclusions. First structure the signal, then inspect the branches, then decide what deserves action."
+          description="Do not jump from founder instinct to conclusions. First structure the evidence, then inspect the branches, then decide what deserves action."
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {workflow.map((item, index) => (
@@ -290,8 +290,8 @@ export default function HomePage() {
       <section id="audience" className="mx-auto max-w-7xl px-6 py-20 md:px-8">
         <SectionHeading
           eyebrow="Built For"
-          title="Made for readers who want structure, replay, and comparison."
-          description="If a decision feels symbolically dense or timing-sensitive, this system is designed to slow interpretation down and make the branches legible."
+          title="Made for founders who want structure, replay, and comparison."
+          description="If a startup decision feels noisy, capital-sensitive, or strategically unclear, this system is designed to slow judgment down and make the branches legible."
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {audiences.map((item) => (
@@ -321,7 +321,7 @@ export default function HomePage() {
                   Put the question into the system. Assess it. Simulate it. Replay it.
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-                  The goal is not to force certainty. The goal is to compare possible paths with more discipline than instinct alone can provide.
+                  The goal is not to force certainty. The goal is to compare possible company paths with more discipline than instinct alone can provide.
                 </p>
               </div>
               <div className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:items-end">
