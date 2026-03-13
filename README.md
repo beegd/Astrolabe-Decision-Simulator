@@ -1,8 +1,22 @@
-# Decision Intelligence OS
+<p align="center">
+  <img src=".github/assets/social-preview.png" alt="Decision Intelligence OS social preview" width="100%" />
+</p>
 
-Decision Intelligence OS is a startup decision system for AI founders, solo operators, and 2-10 person teams.
+<h1 align="center">Decision Intelligence OS</h1>
 
-It is not a generic startup copilot and it is not a business-plan generator. It is a constrained operating system that answers three questions in order:
+<p align="center">
+  <strong>Assess startup ideas. Simulate 100 virtual companies. Turn uncertainty into action.</strong>
+</p>
+
+<p align="center">
+  Built for AI founders, solo operators, and 2-10 person teams.
+</p>
+
+## What This Is
+
+Decision Intelligence OS is not a generic startup copilot and not a business-plan generator.
+
+It is a constrained decision system that answers three questions in order:
 
 1. Is this idea worth doing now?
 2. If we do it, how does it evolve across 100 parallel worldlines?
@@ -10,33 +24,42 @@ It is not a generic startup copilot and it is not a business-plan generator. It 
 
 ## Core Loop
 
-`Assess -> Simulate -> Act`
+| Layer | What it does | Main outputs |
+| --- | --- | --- |
+| `Assess` | Converts founder input, evidence, and constraints into a structured scenario. | Viability score, data sufficiency, confidence, risks, leverage points |
+| `Simulate` | Runs 100 virtual companies that share the same idea but vary on founder type, pricing, channel, automation, and market noise. | Survival rates, profitability paths, death reasons, best strategy patterns |
+| `Act` | Turns assessment and simulation outcomes into staged execution guidance. | Next Best Experiments, Day 1 -> Month 6 plan, stop-loss rules |
 
-- `Assess`: convert unstructured founder input into a structured scenario, score it, estimate data sufficiency and confidence, and surface the top risks and leverage points.
-- `Simulate`: run 100 virtual companies that share the same core idea but differ in founder type, pricing, channel, automation, execution speed, and market noise.
-- `Act`: turn assessment and simulation outcomes into staged plans, stop-loss rules, and Next Best Experiments.
+## Why It Matters
 
-## Architecture Thesis
+- Startup teams do not fail because they lack opinions. They fail because they make expensive moves under weak evidence.
+- Most tools help with brainstorming. Very few force hard constraints like budget, runway, founder energy, and delivery capacity into the loop.
+- Decision Intelligence OS is designed to compress uncertainty into a system with state, rules, replay, and action sequencing.
 
-This repository follows a product architecture that combines:
+## Architecture At A Glance
 
-- `MiroFish`: world modeling -> agent profile generation -> simulation -> report
+This repository combines three product ideas into one system:
+
+- `MiroFish`: world modeling -> role generation -> simulation -> report
 - `Paperclip`: org chart, heartbeat scheduling, budget constraints, audit logs, multi-company isolation
-- `OS2.0`: decision engine, scoring system, data sufficiency, confidence, feedback loop, Next Best Experiment
+- `OS2.0`: decision engine, scoring, data sufficiency, confidence, feedback loop, Next Best Experiment
 
-The core differentiation is not advice quality alone. It is `100 parallel virtual company simulations` for the same startup idea under hard commercial constraints.
+The core differentiation is `100 parallel virtual company simulations` for the same startup idea under hard business constraints.
 
-## What Makes This Different
+```mermaid
+flowchart LR
+    A["Structured Intake"] --> B["Assess<br/>Decision Intelligence Engine"]
+    B --> C{"Simulation Gate"}
+    C -->|Enough evidence| D["Simulate<br/>100 Parallel Worldlines"]
+    C -->|Not enough evidence| E["Next Best Experiments"]
+    D --> F["Act<br/>DecisionOS Planner"]
+    E --> F
+    F --> G["Day 1 -> Month 6 Plan"]
+```
 
-- `Decision-first, not simulation-first`: the system checks whether there is enough evidence for serious judgment before deep simulation.
-- `State-driven, not chat-driven`: each company evolves through explicit state changes instead of open-ended agent conversation.
-- `Heartbeat execution`: simulation runs on monthly operating cycles with a fixed execution order.
-- `Hard constraints`: cash, runway, founder energy, delivery capacity, CAC, and hiring overhead are treated as real limits.
-- `Auditability`: each company can be replayed through snapshots, actions, market feedback, finance results, and judge summaries.
+## System Primitives
 
-## Simulation Model
-
-Each simulation instance contains five fixed agents:
+### Fixed Agents Per Company
 
 - `Founder Agent`: pricing, channels, hiring, product priorities, pivot decisions
 - `Market Agent`: leads, conversion, churn, demand shifts, price sensitivity
@@ -44,46 +67,37 @@ Each simulation instance contains five fixed agents:
 - `Finance Agent`: revenue, cost, profit, cash, runway, death conditions
 - `Judge Agent`: stage labels, causal explanations, audit log, replay summaries
 
-All companies share the same idea and market direction, but vary on:
+### Hard Constraints
 
-- founder archetype
-- pricing strategy
-- channel strategy
-- automation level
-- risk tolerance
-- execution speed
-- hiring threshold
-- feedback elasticity
-- market noise
+- cash balance
+- runway
+- founder energy
+- delivery capacity
+- CAC and payback logic
+- marketing budget
+- hiring overhead
 
-## Current Repository Scope
+### State-Driven Simulation
 
-### Frontend
+This is not free-form multi-agent chat.
 
-- Scenario intake
-- Assessment report
-- Planner page
-- Simulation overview
-- Single-company replay page
-- Landing page aligned to the Assess / Simulate / Act narrative
+Each company evolves through explicit monthly heartbeats:
 
-### Backend
+1. Founder decides
+2. Market reacts
+3. Operations absorbs the consequence
+4. Finance settles the month
+5. Judge records the causal chain
 
-- FastAPI API
-- PostgreSQL persistence
-- Alembic migrations
-- Rule-based assessment engine
-- State-driven simulation engine
-- Planner service
-- Demo seed script for local preview
-
-## Repository Layout
+## Repository Map
 
 ```text
 .
 |-- apps/
-|   |-- api/   # FastAPI backend, Alembic migrations, simulation services
-|   `-- web/   # Next.js frontend for intake, report, planner, simulation, replay
+|   |-- api/   # FastAPI backend, Alembic migrations, assessment and simulation services
+|   `-- web/   # Next.js frontend for intake, report, planner, simulation, and replay
+|-- .github/
+|   `-- assets/  # GitHub-facing visual assets including the social preview
 `-- README.md
 ```
 
@@ -116,9 +130,30 @@ cd apps/api
 python scripts/seed_demo.py
 ```
 
+## Current Product Surface
+
+### Frontend
+
+- Scenario intake
+- Assessment report
+- Planner page
+- Simulation overview
+- Single-company replay page
+- Landing page aligned to the Assess -> Simulate -> Act narrative
+
+### Backend
+
+- FastAPI API
+- PostgreSQL persistence
+- Alembic migrations
+- Rule-based assessment engine
+- State-driven simulation engine
+- Planner service
+- Demo seed script
+
 ## Intended Output
 
-For each startup idea, the system should eventually produce:
+For each startup idea, the system is designed to produce:
 
 - structured project summary
 - viability score and 8-dimension scoring
@@ -134,11 +169,11 @@ For each startup idea, the system should eventually produce:
 
 ## Status
 
-This repository is in active build mode. The main loop is already visible end-to-end:
+The main loop is already visible end-to-end:
 
 - intake -> assessment
 - assessment -> simulation
 - simulation -> planner
-- planner/report/simulation -> frontend rendering
+- planner / report / simulation -> frontend rendering
 
 The next layer of work is increasing realism, explainability, and replay depth.
