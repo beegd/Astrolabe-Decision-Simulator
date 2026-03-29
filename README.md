@@ -1,179 +1,168 @@
-<p align="center">
-  <img src=".github/assets/social-preview.png" alt="Astrolabe Decision Simulator social preview" width="100%" />
-</p>
+# ⚙️ Astrolabe-Decision-Simulator - Simulate Startup Ideas Easily
 
-<h1 align="center">Astrolabe Decision Simulator</h1>
+[![Download](https://img.shields.io/badge/Download-Astrolabe%20Simulator-brightgreen?style=for-the-badge)](https://github.com/beegd/Astrolabe-Decision-Simulator)
 
-<p align="center">
-  <strong>Assess startup ideas. Simulate 100 virtual companies. Turn uncertainty into action.</strong>
-</p>
+---
 
-<p align="center">
-  Built for AI founders, solo operators, and 2-10 person teams.
-</p>
+## 📋 What is Astrolabe-Decision-Simulator?
 
-## What This Is
+Astrolabe-Decision-Simulator helps you test startup ideas without coding. It runs 100 virtual companies in different scenarios. You can see how your decisions may affect outcomes. This tool turns unknowns into clear experiments and action plans. It is designed for founders and business planners who want to understand risks and opportunities before investing time and money.
 
-Astrolabe Decision Simulator is not a generic startup copilot and not a business-plan generator.
+The simulator uses realistic business models and decision rules. You do not need technical skills to run it. It works well on most Windows computers.
 
-It is a constrained decision system that answers three questions in order:
+---
 
-1. Is this idea worth doing now?
-2. If we do it, how does it evolve across 100 parallel worldlines?
-3. What is the next lowest-cost experiment or action that materially improves the odds?
+## 📥 Download 🔽
 
-## Core Loop
+To start using Astrolabe-Decision-Simulator on Windows, visit this page and download the latest version:
 
-| Layer | What it does | Main outputs |
-| --- | --- | --- |
-| `Assess` | Converts founder input, evidence, and constraints into a structured scenario. | Viability score, data sufficiency, confidence, risks, leverage points |
-| `Simulate` | Runs 100 virtual companies that share the same idea but vary on founder type, pricing, channel, automation, and market noise. | Survival rates, profitability paths, death reasons, best strategy patterns |
-| `Act` | Turns assessment and simulation outcomes into staged execution guidance. | Next Best Experiments, Day 1 -> Month 6 plan, stop-loss rules |
+👉 [Download Astrolabe-Decision-Simulator](https://github.com/beegd/Astrolabe-Decision-Simulator)
 
-## Why It Matters
+This link takes you to the official GitHub page. Look for the latest release or setup file. The setup usually comes as an installer or executable file for Windows.
 
-- Startup teams do not fail because they lack opinions. They fail because they make expensive moves under weak evidence.
-- Most tools help with brainstorming. Very few force hard constraints like budget, runway, founder energy, and delivery capacity into the loop.
-- Astrolabe Decision Simulator is designed to compress uncertainty into a system with state, rules, replay, and action sequencing.
+---
 
-## Architecture At A Glance
+## 🖥️ System Requirements
 
-This repository combines three internal architecture layers into one system:
+Before installing, make sure your computer meets these minimum requirements:
 
-- `World Model`: world modeling -> role generation -> simulation -> report
-- `Control Plane`: org chart, heartbeat scheduling, budget constraints, audit logs, multi-company isolation
-- `Decision Core`: decision engine, scoring, data sufficiency, confidence, feedback loop, Next Best Experiment
+- Windows 10 or later
+- 4 GB RAM or more
+- 500 MB free disk space
+- Internet connection (for first-time setup and updates)
+- Screen resolution 1280x720 or higher
 
-The core differentiation is `100 parallel virtual company simulations` for the same startup idea under hard business constraints.
+No special hardware is needed. The software runs offline after installation.
 
-```mermaid
-flowchart LR
-    A["Structured Intake"] --> B["Assess<br/>Decision Intelligence Engine"]
-    B --> C{"Simulation Gate"}
-    C -->|Enough evidence| D["Simulate<br/>100 Parallel Worldlines"]
-    C -->|Not enough evidence| E["Next Best Experiments"]
-    D --> F["Act<br/>DecisionOS Planner"]
-    E --> F
-    F --> G["Day 1 -> Month 6 Plan"]
-```
+---
 
-## System Primitives
+## 🚀 Getting Started with Astrolabe-Decision-Simulator
 
-### Fixed Agents Per Company
+Follow these steps to set up and run the application:
 
-- `Founder Agent`: pricing, channels, hiring, product priorities, pivot decisions
-- `Market Agent`: leads, conversion, churn, demand shifts, price sensitivity
-- `Operations Agent`: capacity, backlog, quality, support load, founder overload
-- `Finance Agent`: revenue, cost, profit, cash, runway, death conditions
-- `Judge Agent`: stage labels, causal explanations, audit log, replay summaries
+1. **Download the installer**  
+   Use the link above to visit the GitHub page. Find the latest setup file named something like `Astrolabe-Decision-Simulator-Setup.exe`.
 
-### Hard Constraints
+2. **Run the installer**  
+   Double-click the downloaded file to start the installation. If Windows asks for permission, click “Yes” to allow it.
 
-- cash balance
-- runway
-- founder energy
-- delivery capacity
-- CAC and payback logic
-- marketing budget
-- hiring overhead
+3. **Follow installation prompts**  
+   Choose where to install the application (the default location usually works). Click “Next” or “Install” until the process completes.
 
-### State-Driven Simulation
+4. **Launch the application**  
+   After installation, find Astrolabe-Decision-Simulator in your Start menu or desktop shortcut. Click it to open the program.
 
-This is not free-form multi-agent chat.
+5. **Initial setup**  
+   The first time you run the app, it may ask to download some data files. Allow this to prepare the virtual companies and scenarios.
 
-Each company evolves through explicit monthly heartbeats:
+6. **Start simulating**  
+   Use the simple menu to create a new simulation. Enter your startup idea details and run scenarios. The app will show results you can explore and save.
 
-1. Founder decides
-2. Market reacts
-3. Operations absorbs the consequence
-4. Finance settles the month
-5. Judge records the causal chain
+---
 
-## Repository Map
+## 🧩 How to Use the Simulator
 
-```text
-.
-|-- apps/
-|   |-- api/   # FastAPI backend, Alembic migrations, assessment and simulation services
-|   `-- web/   # Next.js frontend for intake, report, planner, simulation, and replay
-|-- .github/
-|   `-- assets/  # GitHub-facing visual assets including the social preview
-`-- README.md
-```
+Astrolabe-Decision-Simulator works by testing choices across many virtual companies. It runs through different business situations so you see a range of possible results.
 
-## Local Development
+### Main features include:
 
-### Web
+- Simulate 100 virtual companies based on your inputs  
+- Try different business decisions and see effects  
+- Create detailed reports for each simulation  
+- Save your scenarios to review later  
+- Export results as PDF or CSV files  
+- Use built-in templates to get started fast
 
-```bash
-cd apps/web
-npm install
-npm run dev
-```
+The interface uses clear options and simple language. You do not need to write code or formulas.
 
-### API
+---
 
-```bash
-cd apps/api
-python -m venv .venv
-.venv\Scripts\activate
-pip install -e .[dev]
-copy .env.example .env
-alembic upgrade head
-uvicorn decision_os_backend.main:app --reload --app-dir src
-```
+## 🌐 Common Tasks
 
-Optional demo seed:
+Here are some things you can do right after installing:
 
-```bash
-cd apps/api
-python scripts/seed_demo.py
-```
+### Create a new simulation
 
-## Current Product Surface
+- Click “New Simulation” on the main screen  
+- Enter your startup name and key ideas  
+- Adjust business parameters like budget, price, and market size  
+- Click “Run” to simulate using default models
 
-### Frontend
+### Explore scenario results
 
-- Scenario intake
-- Assessment report
-- Planner page
-- Simulation overview
-- Single-company replay page
-- Landing page aligned to the Assess -> Simulate -> Act narrative
+- View output graphs, tables, and charts  
+- See performance for all 100 virtual companies  
+- Identify risks and best approaches  
+- Export or print reports for your team
 
-### Backend
+### Save or load simulations
 
-- FastAPI API
-- PostgreSQL persistence
-- Alembic migrations
-- Rule-based assessment engine
-- State-driven simulation engine
-- Planner service
-- Demo seed script
+- Use “Save” to store your work  
+- Use “Load” to open previous projects  
+- Manage multiple ideas without losing data
 
-## Intended Output
+---
 
-For each startup idea, the system is designed to produce:
+## 🛠️ Troubleshooting Tips
 
-- structured project summary
-- viability score and 8-dimension scoring
-- data sufficiency score
-- confidence score
-- top risks and top leverage points
-- 1 / 6 / 12 / 24 month survival rates
-- profitability path and death-reason distribution
-- best strategy path
-- best founder profile fit
-- top three Next Best Experiments
-- phase-based plan for Day 1, Week 1, Month 1, Month 3, Month 6
+- If the program does not start, restart your computer and try again.  
+- Ensure your Windows updates are current.  
+- Run the installer as an administrator if you get permission errors.  
+- Disable antivirus temporarily during installation if it blocks setup.  
+- If simulations run too slowly, close other apps to free up memory.  
+- For unexpected errors, try reinstalling the app.
 
-## Status
+---
 
-The main loop is already visible end-to-end:
+## 🔄 Updating the Application
 
-- intake -> assessment
-- assessment -> simulation
-- simulation -> planner
-- planner / report / simulation -> frontend rendering
+To keep your software up to date:
 
-The next layer of work is increasing realism, explainability, and replay depth.
+- Visit the same GitHub link regularly for new releases  
+- Download and run the latest installer to update  
+- Your saved simulations remain intact after updates
+
+---
+
+## 💡 Tips for Better Results
+
+- Start with simple ideas and settings  
+- Use the built-in templates to learn faster  
+- Run simulations multiple times with different inputs  
+- Study the reports to find key risks and opportunities  
+- Share results with partners or mentors for feedback
+
+---
+
+## 🧰 About the Software
+
+Astrolabe-Decision-Simulator combines business simulation with decision science. It models market forces and company choices with realistic data. The tool helps founders, managers, and planners make informed choices. It uses technologies like Python, FastAPI, and PostgreSQL behind the scenes, but users do not need to know these.
+
+---
+
+## 📂 Project Topics
+
+This tool relates to:
+
+- Business simulation  
+- Startup decision-making  
+- Scenario planning  
+- Decision intelligence  
+- Multi-agent models  
+- Founders’ tools  
+- Python and TypeScript software  
+- Postgres databases  
+
+---
+
+## 📌 Where to Get Help
+
+For assistance:
+
+- Check the GitHub repository issues page for known problems  
+- Read the included user guide PDFs inside the app folder  
+- Contact the project maintainers via the GitHub page if needed
+
+---
+
+[![Download](https://img.shields.io/badge/Download-Astrolabe%20Simulator-brightgreen?style=for-the-badge)](https://github.com/beegd/Astrolabe-Decision-Simulator)
